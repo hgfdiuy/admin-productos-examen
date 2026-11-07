@@ -64,7 +64,7 @@ function guardarProducto() {
   const stock  = Number(document.getElementById("stock").value);
   const msg = document.getElementById("form-msg");
   if (nombre === "") { msg.textContent = "El nombre es obligatorio."; return; }
-  if (isNaN(precio) || precio < 0) { msg.textContent = "El precio debe ser un numero mayor que 0."; return; }
+  if (isNaN(precio) || precio <= 0) { msg.textContent = "El precio debe ser un numero mayor que 0."; return; }
   if (isNaN(stock) || stock < 0 || !Number.isInteger(stock)) { msg.textContent = "El stock debe ser un entero de 0 o mas."; return; }
   msg.textContent = "";
   if (editandoId === null) {
